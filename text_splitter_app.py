@@ -22,6 +22,13 @@ class TextSplitterApp(QWidget):
     def init_ui(self):
         self.setWindowTitle('Text File Splitter')
         self.setGeometry(100, 100, 900, 650)
+        
+        # Set window icon
+        try:
+            self.setWindowIcon(QIcon('app_icon.ico'))
+        except:
+            pass  # Fallback if icon file not found
+            
         main_layout = QVBoxLayout()
         main_layout.setContentsMargins(20, 12, 20, 12)
         main_layout.setSpacing(16)
@@ -45,13 +52,13 @@ class TextSplitterApp(QWidget):
         icon.setPixmap(icon_pix)
         icon.setStyleSheet('''
             border-radius: 24px; 
-            background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #fbbf24, stop:1 #f59e0b); 
+            background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #f59e0b, stop:1 #d97706); 
             margin: 6px;
             border: 3px solid #ffffff;
         ''')
         
         # Add a text overlay for the icon
-        icon_text = QLabel('✂️')
+        icon_text = QLabel('📄')
         icon_text.setFont(QFont('Segoe UI Emoji', 24))
         icon_text.setAlignment(Qt.AlignCenter)
         icon_text.setStyleSheet('background: transparent; color: #ffffff;')
